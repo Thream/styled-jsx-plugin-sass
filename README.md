@@ -1,9 +1,8 @@
-# styled-jsx-plugin-sass
+# styled-jsx-plugin-sass-2
 
-[![Build Status](https://travis-ci.org/giuseppeg/styled-jsx-plugin-sass.svg?branch=master)](https://travis-ci.org/giuseppeg/styled-jsx-plugin-sass)
-[![npm](https://img.shields.io/npm/v/styled-jsx-plugin-sass.svg)](https://www.npmjs.com/package/styled-jsx-plugin-sass)
+Use [Sass](http://sass-lang.com/) with [styled-jsx](https://github.com/vercel/styled-jsx) 💥
 
-Use [Sass](http://sass-lang.com/) with [styled-jsx](https://github.com/zeit/styled-jsx) 💥
+This is a fixed/updated version of [styled-jsx-plugin-sass](https://github.com/giuseppeg/styled-jsx-plugin-sass) by [@giuseppeg](https://github.com/giuseppeg), made because that package seems to be outdated. It works with [indented sass](#indented-syntax) and dart sass too.
 
 ## Usage
 
@@ -19,14 +18,18 @@ Install the `node-sass` version you need (it is a peer dependency).
 npm install --save-dev node-sass
 ```
 
-Next, add `styled-jsx-plugin-sass` to the `styled-jsx`'s `plugins` in your babel configuration:
+Next, add `styled-jsx-plugin-sass-2` to the `styled-jsx`'s `plugins` in your babel configuration (e.g. `.babelrc`):
 
 ```json
 {
-  "plugins": [
+  "presets": [
     [
-      "styled-jsx/babel",
-      { "plugins": ["styled-jsx-plugin-sass"] }
+      "next/babel",
+      {
+        "styled-jsx": {
+          "plugins": ["styled-jsx-plugin-sass-2"]
+        }
+      }
     ]
   ]
 }
@@ -38,19 +41,40 @@ Node-sass can be configured using `sassOptions`. This is useful for setting opti
 
 ```json
 {
-  "plugins": [
+  "presets": [
     [
-      "styled-jsx/babel",
+      "next/babel",
       {
-        "plugins": [
-          ["styled-jsx-plugin-sass", {
-              "sassOptions": {
-                "includePaths": ["./styles"],
-                "precision": 2
+        "styled-jsx": {
+          "plugins": [
+            ["styled-jsx-plugin-sass-2", {
+                "sassOptions": {
+                  "includePaths": ["./styles"],
+                  "precision": 2
+                }
               }
-            }
+            ]
           ]
-        ]
+        }
+      }
+    ]
+  ]
+}
+```
+
+### Indented syntax
+
+To use indented sytax, you will need to update your `sassOptions` inside your babel configuration file.
+
+```json
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "styled-jsx": {
+          "plugins": [["styled-jsx-plugin-sass-2", { "sassOptions": { "indentedSyntax": true } }]]
+        }
       }
     ]
   ]
@@ -59,7 +83,7 @@ Node-sass can be configured using `sassOptions`. This is useful for setting opti
 
 #### Notes
 
-`styled-jsx-plugin-sass` uses `styled-jsx`'s plugin system which is supported from version 2.
+`styled-jsx-plugin-sass-2` uses `styled-jsx`'s plugin system which is supported from version 2.
 
 Read more on their repository for further info.
 
