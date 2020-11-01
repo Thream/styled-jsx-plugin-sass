@@ -6,6 +6,7 @@ const plugin = require('./')
 
 const cleanup = str => stripIndent(str).trim()
 
+// testing is done with node-sass
 describe('styled-jsx-plugin-sass', () => {
 
   it('applies plugins', () => {

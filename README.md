@@ -2,20 +2,20 @@
 
 Use [Sass](http://sass-lang.com/) with [styled-jsx](https://github.com/vercel/styled-jsx) 💥
 
-This is a fixed/updated version of [styled-jsx-plugin-sass](https://github.com/giuseppeg/styled-jsx-plugin-sass) by [@giuseppeg](https://github.com/giuseppeg), made because that package seems to be outdated. It works with [indented sass](#indented-syntax) and dart sass too.
+This is a fixed/updated version of [styled-jsx-plugin-sass](https://github.com/giuseppeg/styled-jsx-plugin-sass) by [@giuseppeg](https://github.com/giuseppeg), made because that package seems to be outdated. It works with [indented sass](#indented-syntax) and [dart sass](#dart-sass) too.
 
 ## Usage
 
-Install the package first.
+Install the package and the `node-sass` (or [dart-sass](#dart-sass)) version you need (it is a peer dependency).
 
-```bash
-npm install --save-dev styled-jsx-plugin-sass
+```sh
+npm install --save-dev node-sass styled-jsx-plugin-sass-2
 ```
 
-Install the `node-sass` version you need (it is a peer dependency).
+with yarn
 
-```bash
-npm install --save-dev node-sass
+```sh
+yarn add -D node-sass styled-jsx-plugin-sass-2
 ```
 
 Next, add `styled-jsx-plugin-sass-2` to the `styled-jsx`'s `plugins` in your babel configuration (e.g. `.babelrc`):
@@ -79,6 +79,20 @@ To use indented sytax, you will need to update your `sassOptions` inside your ba
     ]
   ]
 }
+```
+
+### Dart sass
+
+If you want to use Dart sass instead of `node-sass`, your install command should look like this:
+
+```sh
+npm install --save-dev sass styled-jsx-plugin-sass-2
+```
+
+with yarn
+
+```sh
+yarn add -D sass styled-jsx-plugin-sass-2
 ```
 
 #### Notes
