@@ -10,7 +10,7 @@ const cleanup = str => stripIndent(str).trim()
 describe('styled-jsx-plugin-sass', () => {
 
   it('applies plugins', () => {
-    assert.equal(
+    assert.strictEqual(
       plugin('p { img { display: block} color: color(red a(90%)) }', {}).trim(),
       cleanup(`
         p {
@@ -22,7 +22,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it("does not add space after variable placeholder", () => {
-    assert.equal(
+    assert.strictEqual(
       plugin('p { img { color: %%styled-jsx-placeholder-0%%px; } }', {}).trim(),
       cleanup(`
         p img {
@@ -32,7 +32,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it("works with placeholders in css functions", () => {
-    assert.equal(
+    assert.strictEqual(
       plugin('div { grid-template-columns: repeat(%%styled-jsx-placeholder-0%%, calc(%%styled-jsx-placeholder-1%%% - %%styled-jsx-placeholder-2%%px)); }', {}).trim(),
       cleanup(`
         div {
@@ -42,7 +42,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it('works with placeholders', () => {
-    assert.equal(
+    assert.strictEqual(
       plugin(`
         p { 
           img { display: block } color: %%styled-jsx-placeholder-0%%; border-bottom: 1px solid %%styled-jsx-placeholder-1%%; 
@@ -66,7 +66,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it('works with media queries placeholders', () => {
-    assert.equal(
+    assert.strictEqual(
       plugin(`
         p {
           display: block;
@@ -93,7 +93,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it('works with selectors placeholders', () => {
-    assert.equal(
+    assert.strictEqual(
       plugin('p { display: block; %%styled-jsx-placeholder-0%% { color: red; } }', {}).trim(),
       cleanup(`
         p {
@@ -105,7 +105,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it('works with @import', () => {
-    assert.equal(
+    assert.strictEqual(
       plugin('@import "fixtures/fixture"; p { color: red }', {}).trim(),
       cleanup(`
         div {
@@ -121,7 +121,7 @@ describe('styled-jsx-plugin-sass', () => {
     const filename = 'fixtures/entry.scss'
     const file = fs.readFileSync(path.join(__dirname, filename))
 
-    assert.equal(
+    assert.strictEqual(
       plugin(file.toString(), { babel: { filename } }).trim(),
       cleanup(`
         * {
@@ -134,7 +134,7 @@ describe('styled-jsx-plugin-sass', () => {
   });
 
   it('applies sassOptions', () => {
-    assert.equal(
+    assert.strictEqual(
       plugin('div { padding: (1 / 3) * 1em }', {
         sassOptions: {
           precision: 1
@@ -148,7 +148,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it('works with indentedSyntax', () => {  
-    assert.equal(
+    assert.strictEqual(
       plugin('body\n\tdisplay: block\n\tmargin: 0', {
         sassOptions: {
           indentedSyntax: true
@@ -163,7 +163,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it('cleans up extra indent', () => {
-    assert.equal(
+    assert.strictEqual(
       plugin(`
           body
             display: block
@@ -182,7 +182,7 @@ describe('styled-jsx-plugin-sass', () => {
   })
 
   it('works with data option', () => {
-    assert.equal(
+    assert.strictEqual(
       plugin(`
           div
             display: block
