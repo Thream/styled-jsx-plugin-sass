@@ -2,7 +2,12 @@
 
 Use [Sass](http://sass-lang.com/) with [styled-jsx](https://github.com/vercel/styled-jsx) 💥
 
-This is a fixed/updated version of [styled-jsx-plugin-sass](https://github.com/giuseppeg/styled-jsx-plugin-sass) by [@giuseppeg](https://github.com/giuseppeg), made because that package seems to be outdated. It works with [indented sass](#indented-syntax) and [dart sass](#dart-sass) too.
+This is a fixed/updated version of [styled-jsx-plugin-sass](https://github.com/giuseppeg/styled-jsx-plugin-sass) by [@giuseppeg](https://github.com/giuseppeg), made because that package seems to be unmaintained. 
+
+## What's the difference?
+
+This plugin works with [indented sass](#indented-syntax) and [dart sass](#dart-sass) too, neither of those were possible with the old package. It also includes code from pull requests that weren't merged in the original repo.
+Credits to [@giuseppeg](https://github.com/giuseppeg), [@xhuz](https://github.com/xhuz) and [@jamestalmage](https://github.com/jamestalmage).
 
 ## Usage
 
