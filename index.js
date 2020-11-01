@@ -19,7 +19,8 @@ module.exports = (css, settings) => {
   // Prepend option data to cssWithPlaceholders
   const optionData = settings.sassOptions && settings.sassOptions.data || ''
   // clean up extra indent (indentedSyntax is not compatible with extra indenting)
-  let data = stripIndent(optionData + '\n' + cssWithPlaceholders)
+  // they need to be cleaned up separately, and than concated
+  const data = stripIndent(optionData) + '\n' + stripIndent(cssWithPlaceholders)
 
   const preprocessed = sass
     .renderSync(Object.assign({}, settings.sassOptions, { data }))

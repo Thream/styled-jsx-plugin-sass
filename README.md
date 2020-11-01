@@ -7,6 +7,7 @@ This is a fixed/updated version of [styled-jsx-plugin-sass](https://github.com/g
 ## What's the difference?
 
 This plugin works with [indented sass](#indented-syntax) and [dart sass](#dart-sass) too, neither of those were possible with the old package. It also includes code from pull requests that weren't merged in the original repo.
+
 Credits to [@giuseppeg](https://github.com/giuseppeg), [@xhuz](https://github.com/xhuz) and [@jamestalmage](https://github.com/jamestalmage).
 
 ## Usage

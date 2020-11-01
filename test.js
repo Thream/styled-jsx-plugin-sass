@@ -185,4 +185,24 @@ describe('styled-jsx-plugin-sass', () => {
       `)
     )
   })
+
+  it('works with data option', () => {
+    assert.equal(
+      plugin(`
+          div
+            display: block
+            color: $test-color
+      `, {
+        sassOptions: {
+          indentedSyntax: true,
+          data: `$test-color: #ff0000`
+        }
+      }).trim(),
+      cleanup(`
+        div {
+          display: block;
+          color: #ff0000; }
+      `)
+    )
+  })
 })
