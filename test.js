@@ -150,4 +150,38 @@ describe('styled-jsx-plugin-sass', () => {
       `)
     )
   })
+
+  it('works with indentedSyntax', () => {  
+    assert.equal(
+      plugin('body\n\tdisplay: block\n\tmargin: 0', {
+        sassOptions: {
+          indentedSyntax: true
+        }
+      }).trim(),
+      cleanup(`
+        body {
+          display: block;
+          margin: 0; }
+      `)
+    )
+  })
+
+  it('cleans up extra indent with indentedSyntax', () => {
+    assert.equal(
+      plugin(`
+          body
+            display: block
+            margin: 0
+      `, {
+        sassOptions: {
+          indentedSyntax: true
+        }
+      }).trim(),
+      cleanup(`
+        body {
+          display: block;
+          margin: 0; }
+      `)
+    )
+  })
 })

@@ -1,5 +1,5 @@
 const sass = require('node-sass');
-const path = require('path');
+const stripIndent = require('strip-indent');
 
 module.exports = (css, settings) => {
   const cssWithPlaceholders = css
@@ -12,7 +12,10 @@ module.exports = (css, settings) => {
 
   // Prepend option data to cssWithPlaceholders
   const optionData = settings.sassOptions && settings.sassOptions.data || "";
-  const data = optionData + "\n" + cssWithPlaceholders;
+  let data = optionData + "\n" + cssWithPlaceholders;
+
+  // clean up extra indent if we are using indentedSyntax
+  if(settings.sassOptions && settings.sassOptions.indentedSyntax) data = stripIndent(data);
 
   const preprocessed = sass.renderSync(
     Object.assign(
