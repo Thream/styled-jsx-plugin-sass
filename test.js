@@ -122,12 +122,7 @@ describe('styled-jsx-plugin-sass', () => {
     const file = fs.readFileSync(path.join(__dirname, filename))
 
     assert.equal(
-      plugin(file.toString(), {
-        sassOptions: {
-          includePaths: [path.join(__dirname, 'fixtures')]
-        },
-        babel: { filename }
-      }).trim(),
+      plugin(file.toString(), { babel: { filename } }).trim(),
       cleanup(`
         * {
           font-family: "Comic Sans MS" !important; }

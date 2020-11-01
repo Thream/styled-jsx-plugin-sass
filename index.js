@@ -21,9 +21,10 @@ module.exports = (css, settings) => {
   // clean up extra indent (indentedSyntax is not compatible with extra indenting)
   // they need to be cleaned up separately, and than concated
   const data = stripIndent(optionData) + '\n' + stripIndent(cssWithPlaceholders)
+  const file = settings.babel && settings.babel.filename
 
   const preprocessed = sass
-    .renderSync(Object.assign({}, settings.sassOptions, { data }))
+    .renderSync(Object.assign({}, { file }, settings.sassOptions, { data }))
     .css.toString()
 
   return preprocessed
