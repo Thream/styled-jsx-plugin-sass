@@ -167,7 +167,7 @@ describe('styled-jsx-plugin-sass', () => {
     )
   })
 
-  it('cleans up extra indent with indentedSyntax', () => {
+  it('cleans up extra indent', () => {
     assert.equal(
       plugin(`
           body
