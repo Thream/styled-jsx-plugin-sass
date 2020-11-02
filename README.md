@@ -15,16 +15,16 @@ Credits to [@giuseppeg](https://github.com/giuseppeg), [@xhuz](https://github.co
 Install the package and the `node-sass` (or [dart-sass](#dart-sass)) version you need (it is a peer dependency).
 
 ```sh
-npm install --save-dev node-sass styled-jsx-plugin-sass-2
+npm install --save-dev node-sass @styled-jsx/plugin-sass
 ```
 
 with yarn
 
 ```sh
-yarn add -D node-sass styled-jsx-plugin-sass-2
+yarn add -D node-sass @styled-jsx/plugin-sass
 ```
 
-Next, add `styled-jsx-plugin-sass-2` to the `styled-jsx`'s `plugins` in your babel configuration (e.g. `.babelrc`):
+Next, add `@styled-jsx/plugin-sass` to the `styled-jsx`'s `plugins` in your babel configuration (e.g. `.babelrc`):
 
 ```json
 {
@@ -33,7 +33,7 @@ Next, add `styled-jsx-plugin-sass-2` to the `styled-jsx`'s `plugins` in your bab
       "next/babel",
       {
         "styled-jsx": {
-          "plugins": ["styled-jsx-plugin-sass-2"]
+          "plugins": ["@styled-jsx/plugin-sass"]
         }
       }
     ]
@@ -53,7 +53,7 @@ Node-sass can be configured using `sassOptions`. This is useful for setting opti
       {
         "styled-jsx": {
           "plugins": [
-            ["styled-jsx-plugin-sass-2", {
+            ["@styled-jsx/plugin-sass", {
                 "sassOptions": {
                   "includePaths": ["./styles"],
                   "precision": 2
@@ -79,7 +79,7 @@ To use indented sytax, you will need to update your `sassOptions` inside your ba
       "next/babel",
       {
         "styled-jsx": {
-          "plugins": [["styled-jsx-plugin-sass-2", { "sassOptions": { "indentedSyntax": true } }]]
+          "plugins": [["@styled-jsx/plugin-sass", { "sassOptions": { "indentedSyntax": true } }]]
         }
       }
     ]
@@ -92,18 +92,18 @@ To use indented sytax, you will need to update your `sassOptions` inside your ba
 If you want to use Dart sass instead of `node-sass`, your install command should look like this:
 
 ```sh
-npm install --save-dev sass styled-jsx-plugin-sass-2
+npm install --save-dev sass @styled-jsx/plugin-sass
 ```
 
 with yarn
 
 ```sh
-yarn add -D sass styled-jsx-plugin-sass-2
+yarn add -D sass @styled-jsx/plugin-sass
 ```
 
 #### Notes
 
-`styled-jsx-plugin-sass-2` uses `styled-jsx`'s plugin system which is supported from version 2.
+`@styled-jsx/plugin-sass` uses `styled-jsx`'s plugin system which is supported from version 2.
 
 Read more on their repository for further info.
 
