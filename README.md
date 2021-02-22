@@ -1,30 +1,36 @@
-# styled-jsx-plugin-sass-2
+<h1 align="center">Thream/styled-jsx-plugin-sass</h1>
 
-Use [Sass](http://sass-lang.com/) with [styled-jsx](https://github.com/vercel/styled-jsx) 💥
+<p align="center">
+  <strong>Plugin to add <a href="https://sass-lang.com/">Sass</a> support to <a href="https://github.com/vercel/styled-jsx">styled-jsx</a>.</strong>
+</p>
 
-This is a fixed/updated version of [styled-jsx-plugin-sass](https://github.com/giuseppeg/styled-jsx-plugin-sass) by [@giuseppeg](https://github.com/giuseppeg), made because that package seems to be unmaintained. 
+<p align="center">
+  <a href="https://github.com/Thream/styled-jsx-plugin-sass/actions?query=workflow%3A%22Node.js+CI%22"><img src="https://github.com/Thream/styled-jsx-plugin-sass/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" /></a>
+  <a href="https://dependabot.com/"><img src="https://badgen.net/github/dependabot/Thream/styled-jsx-plugin-sass?icon=dependabot" alt="Dependabot badge" /></a>
+  <a href="https://www.npmjs.com/package/@styled-jsx/plugin-sass"><img src="https://img.shields.io/npm/v/@styled-jsx/plugin-sass.svg" alt="npm version"></a>
+  <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Standard Style"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/licence-MIT-blue.svg" alt="Licence MIT"/></a>
+  <a href="https://conventionalcommits.org"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits" /></a>
+  <a href="https://github.com/Thream/Thream/blob/master/.github/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" alt="Contributor Covenant" /></a>
+</p>
 
-## What's the difference?
+## 📜 About
 
-This plugin works with [indented sass](#indented-syntax) and [dart sass](#dart-sass) too, neither of those were possible with the old package. It also includes code from pull requests that weren't merged in the original repo.
+Use [Sass](https://sass-lang.com/) with [styled-jsx](https://github.com/vercel/styled-jsx) 💥
 
-Credits to [@giuseppeg](https://github.com/giuseppeg), [@xhuz](https://github.com/xhuz) and [@jamestalmage](https://github.com/jamestalmage).
+This repository was originally forked from [giuseppeg/styled-jsx-plugin-sass](https://github.com/giuseppeg/styled-jsx-plugin-sass) & it is not intended to take any credit but to improve the code from now on.
 
-## Usage
+## 💾 Install
 
 Install the package and the `node-sass` (or [dart-sass](#dart-sass)) version you need (it is a peer dependency).
 
 ```sh
-npm install --save-dev node-sass @styled-jsx/plugin-sass
+npm install --save-dev sass @styled-jsx/plugin-sass
 ```
 
-with yarn
+## ⚙️ Usage
 
-```sh
-yarn add -D node-sass @styled-jsx/plugin-sass
-```
-
-Next, add `@styled-jsx/plugin-sass` to the `styled-jsx`'s `plugins` in your babel configuration (e.g. `.babelrc`):
+Add `@styled-jsx/plugin-sass` to the `styled-jsx`'s `plugins` in your babel configuration (e.g. `.babelrc.json`):
 
 ```json
 {
@@ -53,7 +59,9 @@ Node-sass can be configured using `sassOptions`. This is useful for setting opti
       {
         "styled-jsx": {
           "plugins": [
-            ["@styled-jsx/plugin-sass", {
+            [
+              "@styled-jsx/plugin-sass",
+              {
                 "sassOptions": {
                   "includePaths": ["./styles"],
                   "precision": 2
@@ -79,7 +87,12 @@ To use indented sytax, you will need to update your `sassOptions` inside your ba
       "next/babel",
       {
         "styled-jsx": {
-          "plugins": [["@styled-jsx/plugin-sass", { "sassOptions": { "indentedSyntax": true } }]]
+          "plugins": [
+            [
+              "@styled-jsx/plugin-sass",
+              { "sassOptions": { "indentedSyntax": true } }
+            ]
+          ]
         }
       }
     ]
@@ -87,26 +100,12 @@ To use indented sytax, you will need to update your `sassOptions` inside your ba
 }
 ```
 
-### Dart sass
+## 💡 Contributing
 
-If you want to use Dart sass instead of `node-sass`, your install command should look like this:
+Anyone can help to improve the project, submit a Feature Request, a bug report or even correct a simple spelling mistake.
 
-```sh
-npm install --save-dev sass @styled-jsx/plugin-sass
-```
+The steps to contribute can be found in the [CONTRIBUTING.md](./.github/CONTRIBUTING.md) file.
 
-with yarn
+## 📄 License
 
-```sh
-yarn add -D sass @styled-jsx/plugin-sass
-```
-
-#### Notes
-
-`@styled-jsx/plugin-sass` uses `styled-jsx`'s plugin system which is supported from version 2.
-
-Read more on their repository for further info.
-
-## License
-
-MIT
+[MIT](./LICENSE)

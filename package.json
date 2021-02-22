@@ -2,13 +2,10 @@
   "name": "@styled-jsx/plugin-sass",
   "version": "2.0.1",
   "description": "Plugin to add Sass support to styled-jsx",
+  "license": "MIT",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/martonlederer/styled-jsx-plugin-sass-2.git"
+  "engines": {
+    "node": ">=12"
   },
   "keywords": [
     "styled-jsx-plugin",
@@ -16,19 +13,76 @@
     "sass"
   ],
   "author": "Marton Lederer",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martonlederer/styled-jsx-plugin-sass-2.git"
+  },
   "bugs": {
     "url": "https://github.com/martonlederer/styled-jsx-plugin-sass-2/issues"
   },
   "homepage": "https://github.com/martonlederer/styled-jsx-plugin-sass-2#readme",
+  "release-it": {
+    "git": {
+      "commit": false,
+      "push": false,
+      "tag": false
+    },
+    "github": {
+      "release": false
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "before:init": [
+        "npm run lint",
+        "npm run markdownlint",
+        "npm run test"
+      ]
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "CHANGELOG.md"
+      }
+    }
+  },
+  "standard": {
+    "files": [
+      "**/*.js"
+    ],
+    "envs": [
+      "node",
+      "mocha"
+    ]
+  },
+  "scripts": {
+    "markdownlint": "markdownlint '**/*.md' --ignore node_modules",
+    "lint": "standard | snazzy",
+    "format": "standard --fix | snazzy",
+    "release": "release-it",
+    "test": "mocha test.js",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
+  },
   "dependencies": {
-    "strip-indent": "^3.0.0"
+    "strip-indent": "3.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "@release-it/conventional-changelog": "2.0.1",
+    "husky": "5.1.1",
+    "markdownlint-cli": "0.26.0",
+    "mocha": "8.3.0",
+    "node-sass": "5.0.0",
+    "pinst": "2.1.6",
+    "release-it": "14.4.1",
+    "snazzy": "9.0.0",
+    "standard": "16.0.3"
   },
   "peerDependencies": {
     "node-sass": "*"
-  },
-  "devDependencies": {
-    "mocha": "^8.2.0",
-    "node-sass": "^5.0.0"
   }
 }
