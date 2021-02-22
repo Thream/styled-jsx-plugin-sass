@@ -10,17 +10,19 @@
   "keywords": [
     "styled-jsx-plugin",
     "styled-jsx",
-    "sass"
+    "sass",
+    "scss",
+    "css-in-js"
   ],
   "author": "Marton Lederer",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martonlederer/styled-jsx-plugin-sass-2.git"
+    "url": "git+https://github.com/Thream/styled-jsx-plugin-sass.git"
   },
   "bugs": {
-    "url": "https://github.com/martonlederer/styled-jsx-plugin-sass-2/issues"
+    "url": "https://github.com/Thream/styled-jsx-plugin-sass/issues"
   },
-  "homepage": "https://github.com/martonlederer/styled-jsx-plugin-sass-2#readme",
+  "homepage": "https://github.com/Thream/styled-jsx-plugin-sass#readme",
   "release-it": {
     "git": {
       "commit": false,
