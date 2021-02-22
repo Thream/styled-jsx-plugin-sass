@@ -7,8 +7,8 @@
 <p align="center">
   <a href="https://github.com/Thream/styled-jsx-plugin-sass/actions?query=workflow%3A%22Node.js+CI%22"><img src="https://github.com/Thream/styled-jsx-plugin-sass/workflows/Node.js%20CI/badge.svg" alt="Node.js CI" /></a>
   <a href="https://dependabot.com/"><img src="https://badgen.net/github/dependabot/Thream/styled-jsx-plugin-sass?icon=dependabot" alt="Dependabot badge" /></a>
-  <a href="https://www.npmjs.com/package/@styled-jsx/plugin-sass"><img src="https://img.shields.io/npm/v/@styled-jsx/plugin-sass.svg" alt="npm version"></a>
   <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Standard Style"></a>
+  <a href="https://www.npmjs.com/package/@styled-jsx/plugin-sass"><img src="https://img.shields.io/npm/v/@styled-jsx/plugin-sass.svg" alt="npm version"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/licence-MIT-blue.svg" alt="Licence MIT"/></a>
   <a href="https://conventionalcommits.org"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits" /></a>
   <a href="https://github.com/Thream/Thream/blob/master/.github/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" alt="Contributor Covenant" /></a>
