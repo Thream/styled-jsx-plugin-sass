@@ -59,7 +59,7 @@
     ]
   },
   "scripts": {
-    "markdownlint": "markdownlint '**/*.md' --ignore node_modules",
+    "markdownlint": "markdownlint '**/*.md' --dot --ignore node_modules",
     "lint": "standard | snazzy",
     "format": "standard --fix | snazzy",
     "release": "release-it",
