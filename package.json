@@ -50,9 +50,6 @@
     }
   },
   "standard": {
-    "files": [
-      "**/*.js"
-    ],
     "envs": [
       "node",
       "mocha"
@@ -60,8 +57,7 @@
   },
   "scripts": {
     "markdownlint": "markdownlint '**/*.md' --dot --ignore node_modules",
-    "lint": "standard | snazzy",
-    "format": "standard --fix | snazzy",
+    "lint": "standard",
     "release": "release-it",
     "test": "mocha test.js",
     "postinstall": "husky install",
@@ -81,7 +77,6 @@
     "node-sass": "5.0.0",
     "pinst": "2.1.6",
     "release-it": "14.4.1",
-    "snazzy": "9.0.0",
     "standard": "16.0.3"
   },
   "peerDependencies": {

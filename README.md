@@ -11,7 +11,7 @@
   <a href="https://www.npmjs.com/package/@styled-jsx/plugin-sass"><img src="https://img.shields.io/npm/v/@styled-jsx/plugin-sass.svg" alt="npm version"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/licence-MIT-blue.svg" alt="Licence MIT"/></a>
   <a href="https://conventionalcommits.org"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits" /></a>
-  <a href="https://github.com/Thream/Thream/blob/master/.github/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" alt="Contributor Covenant" /></a>
+  <a href="https://github.com/Thream/Thream/blob/master/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" alt="Contributor Covenant" /></a>
 </p>
 
 ## 📜 About
@@ -104,7 +104,7 @@ To use indented sytax, you will need to update your `sassOptions` inside your ba
 
 Anyone can help to improve the project, submit a Feature Request, a bug report or even correct a simple spelling mistake.
 
-The steps to contribute can be found in the [CONTRIBUTING.md](./.github/CONTRIBUTING.md) file.
+The steps to contribute can be found in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## 📄 License
 

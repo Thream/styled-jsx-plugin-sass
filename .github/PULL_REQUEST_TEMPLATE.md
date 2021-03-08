@@ -5,8 +5,6 @@ Please first discuss the change you wish to make via issue before making a chang
 Before submitting your contribution, please take a moment to review this document:
 https://github.com/Thream/styled-jsx-plugin-sass/blob/master/.github/CONTRIBUTING.md
 
-Please place an x (no spaces - [x]) in all [ ] that apply.
-
 -->
 
 ## What changes this PR introduce?
