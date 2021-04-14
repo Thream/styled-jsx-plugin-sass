@@ -76,7 +76,7 @@
     "mocha": "8.3.2",
     "node-sass": "5.0.0",
     "pinst": "2.1.6",
-    "release-it": "14.5.1",
+    "release-it": "14.6.1",
     "standard": "16.0.3"
   },
   "peerDependencies": {
