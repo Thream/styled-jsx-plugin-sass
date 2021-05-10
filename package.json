@@ -74,7 +74,7 @@
     "husky": "6.0.0",
     "markdownlint-cli": "0.27.1",
     "mocha": "8.3.2",
-    "node-sass": "5.0.0",
+    "node-sass": "6.0.0",
     "pinst": "2.1.6",
     "release-it": "14.6.1",
     "standard": "16.0.3"
