@@ -71,7 +71,7 @@
     "@commitlint/cli": "12.1.4",
     "@commitlint/config-conventional": "12.1.4",
     "@release-it/conventional-changelog": "3.0.1",
-    "husky": "7.0.0",
+    "husky": "7.0.1",
     "markdownlint-cli": "0.27.1",
     "mocha": "9.0.2",
     "node-sass": "6.0.1",
