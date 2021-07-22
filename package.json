@@ -65,7 +65,7 @@
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "strip-indent": "3.0.0"
+    "strip-indent": "4.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
