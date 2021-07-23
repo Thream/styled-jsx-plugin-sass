@@ -1,8 +1,8 @@
-const assert = require('assert')
-const path = require('path')
-const fs = require('fs')
-const stripIndent = require('strip-indent')
-const plugin = require('./')
+import assert from 'node:assert'
+import fs from 'node:fs'
+
+import stripIndent from 'strip-indent'
+import plugin from './index.js'
 
 const cleanup = (str) => stripIndent(str).trim()
 
@@ -143,7 +143,7 @@ describe('styled-jsx-plugin-sass', () => {
 
   it('works with relative @import', () => {
     const filename = 'fixtures/entry.scss'
-    const file = fs.readFileSync(path.join(__dirname, filename))
+    const file = fs.readFileSync(filename)
 
     assert.strictEqual(
       plugin(file.toString(), { babel: { filename } }).trim(),
