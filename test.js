@@ -6,16 +6,17 @@ const plugin = require('./')
 
 const cleanup = (str) => stripIndent(str).trim()
 
-// testing is done with node-sass
 describe('styled-jsx-plugin-sass', () => {
   it('applies plugins', () => {
     assert.strictEqual(
       plugin('p { img { display: block} color: color(red a(90%)) }', {}).trim(),
       cleanup(`
         p {
-          color: color(red a(90%)); }
-          p img {
-            display: block; }
+          color: color(red a(90%));
+        }
+        p img {
+          display: block;
+        }
       `)
     )
   })
@@ -25,7 +26,8 @@ describe('styled-jsx-plugin-sass', () => {
       plugin('p { img { color: %%styled-jsx-placeholder-0%%px; } }', {}).trim(),
       cleanup(`
         p img {
-          color: %%styled-jsx-placeholder-0%%px; }
+          color: %%styled-jsx-placeholder-0%%px;
+        }
       `)
     )
   })
@@ -38,7 +40,8 @@ describe('styled-jsx-plugin-sass', () => {
       ).trim(),
       cleanup(`
         div {
-          grid-template-columns: repeat(%%styled-jsx-placeholder-0%%, calc(%%styled-jsx-placeholder-1%%% - %%styled-jsx-placeholder-2%%px)); }
+          grid-template-columns: repeat(%%styled-jsx-placeholder-0%%, calc(%%styled-jsx-placeholder-1%%% - %%styled-jsx-placeholder-2%%px));
+        }
       `)
     )
   })
@@ -57,11 +60,14 @@ describe('styled-jsx-plugin-sass', () => {
       cleanup(`
         p {
           color: %%styled-jsx-placeholder-0%%;
-          border-bottom: 1px solid %%styled-jsx-placeholder-1%%; }
-          p img {
-            display: block; }
-          p em {
-            color: %%styled-jsx-placeholder-2%% !important; }
+          border-bottom: 1px solid %%styled-jsx-placeholder-1%%;
+        }
+        p img {
+          display: block;
+        }
+        p em {
+          color: %%styled-jsx-placeholder-2%% !important;
+        }
 
         %%styled-jsx-placeholder-1%%
       `)
@@ -82,16 +88,23 @@ describe('styled-jsx-plugin-sass', () => {
       ).trim(),
       cleanup(`
         p {
-          display: block; }
-          @media %%styled-jsx-placeholder-0%% {
-            p {
-              color: red; } }
-          @media (min-width: %%styled-jsx-placeholder-0%%px) {
-            p {
-              color: blue; } }
-          @media (min-width: %%styled-jsx-placeholder-0%%) {
-            p {
-              color: yellow; } }
+          display: block;
+        }
+        @media %%styled-jsx-placeholder-0%% {
+          p {
+            color: red;
+          }
+        }
+        @media (min-width: %%styled-jsx-placeholder-0%%px) {
+          p {
+            color: blue;
+          }
+        }
+        @media (min-width: %%styled-jsx-placeholder-0%%) {
+          p {
+            color: yellow;
+          }
+        }
       `)
     )
   })
@@ -104,9 +117,11 @@ describe('styled-jsx-plugin-sass', () => {
       ).trim(),
       cleanup(`
         p {
-          display: block; }
-          p %%styled-jsx-placeholder-0%% {
-            color: red; }
+          display: block;
+        }
+        p %%styled-jsx-placeholder-0%% {
+          color: red;
+        }
       `)
     )
   })
@@ -116,10 +131,12 @@ describe('styled-jsx-plugin-sass', () => {
       plugin('@import "fixtures/fixture"; p { color: red }', {}).trim(),
       cleanup(`
         div {
-          color: red; }
+          color: red;
+        }
 
         p {
-          color: red; }
+          color: red;
+        }
       `)
     )
   })
@@ -132,24 +149,27 @@ describe('styled-jsx-plugin-sass', () => {
       plugin(file.toString(), { babel: { filename } }).trim(),
       cleanup(`
         * {
-          font-family: "Comic Sans MS" !important; }
+          font-family: "Comic Sans MS" !important;
+        }
 
         p {
-          color: red; }
+          color: red;
+        }
       `)
     )
   })
 
   it('applies sassOptions', () => {
     assert.strictEqual(
-      plugin('div { padding: (1 / 3) * 1em }', {
+      plugin('div { padding: 1em }', {
         sassOptions: {
-          precision: 1
+          indentWidth: 4
         }
       }).trim(),
       cleanup(`
         div {
-          padding: 0.3em; }
+            padding: 1em;
+        }
       `)
     )
   })
@@ -164,7 +184,8 @@ describe('styled-jsx-plugin-sass', () => {
       cleanup(`
         body {
           display: block;
-          margin: 0; }
+          margin: 0;
+        }
       `)
     )
   })
@@ -186,7 +207,8 @@ describe('styled-jsx-plugin-sass', () => {
       cleanup(`
         body {
           display: block;
-          margin: 0; }
+          margin: 0;
+        }
       `)
     )
   })
@@ -209,7 +231,8 @@ describe('styled-jsx-plugin-sass', () => {
       cleanup(`
         div {
           display: block;
-          color: #ff0000; }
+          color: #ff0000;
+        }
       `)
     )
   })

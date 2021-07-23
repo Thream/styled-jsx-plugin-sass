@@ -1,7 +1,7 @@
 const stripIndent = require('strip-indent')
+const sass = require('sass')
 
 module.exports = (css, settings) => {
-  const sass = getSassImplementation()
   const cssWithPlaceholders = css
     .replace(
       /%%styled-jsx-placeholder-(\d+)%%%(\w*\s*[),;!{])/g,
@@ -48,21 +48,4 @@ module.exports = (css, settings) => {
       /\/\*%%styled-jsx-placeholder-(\d+)%%\*\//g,
       (_, id) => `%%styled-jsx-placeholder-${id}%%`
     )
-}
-
-function getSassImplementation () {
-  let sassImplPkg = 'sass'
-
-  try {
-    require.resolve('sass')
-  } catch {
-    try {
-      require.resolve('node-sass')
-      sassImplPkg = 'node-sass'
-    } catch {
-      sassImplPkg = 'sass'
-    }
-  }
-
-  return require(sassImplPkg)
 }

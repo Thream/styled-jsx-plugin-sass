@@ -22,7 +22,7 @@ This repository was originally forked from [giuseppeg/styled-jsx-plugin-sass](ht
 
 ## 💾 Install
 
-Install the package and the `node-sass` (or [dart-sass](#dart-sass)) version you need (it is a peer dependency).
+Install the package and [sass](https://www.npmjs.com/package/sass) version you need (it is a peer dependency).
 
 ```sh
 npm install --save-dev sass @styled-jsx/plugin-sass
@@ -47,9 +47,9 @@ Add `@styled-jsx/plugin-sass` to the `styled-jsx`'s `plugins` in your babel conf
 }
 ```
 
-## Node-sass options
+## Sass options
 
-Node-sass can be configured using `sassOptions`. This is useful for setting options such as `includePaths` or `precision`.
+Sass can be configured using `sassOptions`. This is useful for setting options such as `data` or `includePaths`, see all the available options in [Sass README](https://github.com/sass/node-sass#Options).
 
 ```json
 {
@@ -64,33 +64,9 @@ Node-sass can be configured using `sassOptions`. This is useful for setting opti
               {
                 "sassOptions": {
                   "includePaths": ["./styles"],
-                  "precision": 2
+                  "data": "$test-color: #ff0000"
                 }
               }
-            ]
-          ]
-        }
-      }
-    ]
-  ]
-}
-```
-
-### Indented syntax
-
-To use indented sytax, you will need to update your `sassOptions` inside your babel configuration file.
-
-```json
-{
-  "presets": [
-    [
-      "next/babel",
-      {
-        "styled-jsx": {
-          "plugins": [
-            [
-              "@styled-jsx/plugin-sass",
-              { "sassOptions": { "indentedSyntax": true } }
             ]
           ]
         }
