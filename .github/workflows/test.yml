@@ -1,4 +1,4 @@
-name: 'Node.js CI'
+name: 'Test'
 
 on:
   push:
@@ -7,10 +7,10 @@ on:
     branches: [master, develop]
 
 jobs:
-  ci_app:
+  test:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: 'actions/checkout@v2.3.4'
+      - uses: 'actions/checkout@v2'
 
       - name: 'Use Node.js'
         uses: 'actions/setup-node@v2.3.0'
@@ -21,11 +21,5 @@ jobs:
       - name: 'Install'
         run: 'npm install'
 
-      - name: 'Lint'
-        run: 'npm run lint'
-
-      - name: 'MarkdownLint'
-        run: 'npm run markdownlint'
-
       - name: 'Test'
-        run: 'npm test'
+        run: 'npm run test'

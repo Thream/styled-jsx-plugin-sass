@@ -1,6 +1,6 @@
 {
   "name": "@styled-jsx/plugin-sass",
-  "version": "3.0.0",
+  "version": "0.0.0-development",
   "description": "Plugin to add Sass support to styled-jsx",
   "license": "MIT",
   "type": "module",
@@ -24,32 +24,6 @@
     "url": "https://github.com/Thream/styled-jsx-plugin-sass/issues"
   },
   "homepage": "https://github.com/Thream/styled-jsx-plugin-sass#readme",
-  "release-it": {
-    "git": {
-      "commit": false,
-      "push": false,
-      "tag": false
-    },
-    "github": {
-      "release": false
-    },
-    "npm": {
-      "publish": false
-    },
-    "hooks": {
-      "before:init": [
-        "npm run lint",
-        "npm run markdownlint",
-        "npm run test"
-      ]
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular",
-        "infile": "CHANGELOG.md"
-      }
-    }
-  },
   "standard": {
     "envs": [
       "node",
@@ -57,9 +31,11 @@
     ]
   },
   "scripts": {
-    "markdownlint": "markdownlint '**/*.md' --dot --ignore node_modules",
-    "lint": "standard",
-    "release": "release-it",
+    "lint:commit": "commitlint",
+    "lint:editorconfig": "editorconfig-checker",
+    "lint:markdown": "markdownlint '**/*.md' --dot --ignore node_modules",
+    "lint:javascript": "standard",
+    "release": "semantic-release",
     "test": "mocha test.js",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
@@ -71,13 +47,13 @@
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
     "@commitlint/config-conventional": "12.1.4",
-    "@release-it/conventional-changelog": "3.0.1",
+    "editorconfig-checker": "4.0.2",
     "husky": "7.0.1",
     "markdownlint-cli": "0.28.1",
     "mocha": "9.0.2",
-    "sass": "1.35.2",
     "pinst": "2.1.6",
-    "release-it": "14.10.0",
+    "sass": "1.35.2",
+    "semantic-release": "17.4.4",
     "standard": "16.0.3"
   },
   "peerDependencies": {
