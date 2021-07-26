@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
-    "@commitlint/config-conventional": "12.1.4",
+    "@commitlint/config-conventional": "13.1.0",
     "editorconfig-checker": "4.0.2",
     "husky": "7.0.1",
     "markdownlint-cli": "0.28.1",
