@@ -52,7 +52,7 @@
     "markdownlint-cli": "0.28.1",
     "mocha": "9.0.2",
     "pinst": "2.1.6",
-    "sass": "1.35.2",
+    "sass": "1.36.0",
     "semantic-release": "17.4.4",
     "standard": "16.0.3"
   },
