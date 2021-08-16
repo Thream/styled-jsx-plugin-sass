@@ -1,7 +1,7 @@
-import stripIndent from 'strip-indent'
-import sass from 'sass'
+const sass = require('sass')
+const stripIndent = require('strip-indent')
 
-export default (css, settings) => {
+module.exports = (css, settings) => {
   const cssWithPlaceholders = css
     .replace(
       /%%styled-jsx-placeholder-(\d+)%%%(\w*\s*[),;!{])/g,

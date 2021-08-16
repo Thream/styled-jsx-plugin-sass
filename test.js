@@ -1,8 +1,8 @@
-import assert from 'node:assert'
-import fs from 'node:fs'
+const assert = require('node:assert')
+const fs = require('node:fs')
 
-import stripIndent from 'strip-indent'
-import plugin from './index.js'
+const stripIndent = require('strip-indent')
+const plugin = require('./index.js')
 
 const cleanup = (str) => stripIndent(str).trim()
 
