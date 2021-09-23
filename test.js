@@ -35,12 +35,12 @@ describe('styled-jsx-plugin-sass', () => {
   it('works with placeholders in css functions', () => {
     assert.strictEqual(
       plugin(
-        'div { grid-template-columns: repeat(%%styled-jsx-placeholder-0%%, calc(%%styled-jsx-placeholder-1%%% - %%styled-jsx-placeholder-2%%px)); }',
+        'div { grid-template-columns: repeat(%%styled-jsx-placeholder-0%%); }',
         {}
       ).trim(),
       cleanup(`
         div {
-          grid-template-columns: repeat(%%styled-jsx-placeholder-0%%, calc(%%styled-jsx-placeholder-1%%% - %%styled-jsx-placeholder-2%%px));
+          grid-template-columns: repeat(%%styled-jsx-placeholder-0%%);
         }
       `)
     )
