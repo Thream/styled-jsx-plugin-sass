@@ -44,7 +44,7 @@
     "strip-indent": "3.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "13.2.0",
+    "@commitlint/cli": "13.2.1",
     "@commitlint/config-conventional": "13.2.0",
     "editorconfig-checker": "4.0.2",
     "husky": "7.0.2",
