@@ -4,11 +4,11 @@ const stripIndent = require('strip-indent')
 module.exports = (css, settings) => {
   const cssWithPlaceholders = css
     .replace(
-      /%%styled-jsx-placeholder-(\d+)%%%(\w*\s*[),;!{])/g,
+      /%%styled-jsx-placeholder-(\d+)%%%(\w*[ ),;!{])/g,
       (_, id, p1) => `styled-jsx-percent-placeholder-${id}-${p1}`
     )
     .replace(
-      /%%styled-jsx-placeholder-(\d+)%%(\w*\s*[),;!{])/g,
+      /%%styled-jsx-placeholder-(\d+)%%(\w*[ ),;!{])/g,
       (_, id, p1) => `styled-jsx-placeholder-${id}-${p1}`
     )
     .replace(
@@ -33,11 +33,11 @@ module.exports = (css, settings) => {
 
   return preprocessed
     .replace(
-      /styled-jsx-percent-placeholder-(\d+)-(\w*\s*[),;!{])/g,
+      /styled-jsx-percent-placeholder-(\d+)-(\w*[ ),;!{])/g,
       (_, id, p1) => `%%styled-jsx-placeholder-${id}%%%${p1}`
     )
     .replace(
-      /styled-jsx-placeholder-(\d+)-(\w*\s*[),;!{])/g,
+      /styled-jsx-placeholder-(\d+)-(\w*[ ),;!{])/g,
       (_, id, p1) => `%%styled-jsx-placeholder-${id}%%${p1}`
     )
     .replace(
