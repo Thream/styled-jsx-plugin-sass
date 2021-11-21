@@ -74,6 +74,88 @@ describe('styled-jsx-plugin-sass', () => {
     )
   })
 
+  it('works with mid-statement placeholders', () => {
+    assert.strictEqual(
+      plugin(
+        `
+        div {
+          border: %%styled-jsx-placeholder-0%%px solid orangered;
+          font-size: 16px;
+        }`,
+        {}
+      ).trim(),
+      cleanup(`
+        div {
+          border: %%styled-jsx-placeholder-0%%px solid orangered;
+          font-size: 16px;
+        }
+      `)
+    )
+  })
+
+  it('works with combination of mid-statement and end-of-statement placeholders', () => {
+    assert.strictEqual(
+      plugin(
+        `
+        div {
+          border: %%styled-jsx-placeholder-0%%px solid %%styled-jsx-placeholder-1%%;
+          font-size: %%styled-jsx-placeholder-2%%px;
+        }`,
+        {}
+      ).trim(),
+      cleanup(`
+        div {
+          border: %%styled-jsx-placeholder-0%%px solid %%styled-jsx-placeholder-1%%;
+          font-size: %%styled-jsx-placeholder-2%%px;
+        }
+      `)
+    )
+  })
+
+  it('works with mid-statement percent placeholders', () => {
+    assert.strictEqual(
+      plugin(
+        `
+        div {
+          margin: %%styled-jsx-placeholder-0%%% %%styled-jsx-placeholder-1%%%;
+          border: 4px solid orangered;
+          font-size: 16px;
+        }`,
+        {}
+      ).trim(),
+      cleanup(`
+        div {
+          margin: %%styled-jsx-placeholder-0%%% %%styled-jsx-placeholder-1%%%;
+          border: 4px solid orangered;
+          font-size: 16px;
+        }
+      `)
+    )
+  })
+
+  it('works with combination of mid-statement and end-of-statement placeholders and percent placeholders', () => {
+    assert.strictEqual(
+      plugin(
+        `
+        div {
+          border: %%styled-jsx-placeholder-0%%px solid %%styled-jsx-placeholder-1%%;
+          font-size: %%styled-jsx-placeholder-2%%px;
+          margin: %%styled-jsx-placeholder-3%%% %%styled-jsx-placeholder-4%%%;
+          padding-top: %%styled-jsx-placeholder-5%%%;
+        }`,
+        {}
+      ).trim(),
+      cleanup(`
+        div {
+          border: %%styled-jsx-placeholder-0%%px solid %%styled-jsx-placeholder-1%%;
+          font-size: %%styled-jsx-placeholder-2%%px;
+          margin: %%styled-jsx-placeholder-3%%% %%styled-jsx-placeholder-4%%%;
+          padding-top: %%styled-jsx-placeholder-5%%%;
+        }
+      `)
+    )
+  })
+
   it('works with media queries placeholders', () => {
     assert.strictEqual(
       plugin(
