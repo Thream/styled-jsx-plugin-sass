@@ -49,7 +49,7 @@
     "editorconfig-checker": "4.0.2",
     "husky": "7.0.4",
     "markdownlint-cli": "0.30.0",
-    "mocha": "9.1.4",
+    "mocha": "9.2.0",
     "pinst": "2.1.6",
     "sass": "1.49.0",
     "semantic-release": "19.0.2",
