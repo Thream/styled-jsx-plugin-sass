@@ -17,7 +17,7 @@
   "author": "Marton Lederer",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Thream/styled-jsx-plugin-sass.git"
+    "url": "https://github.com/Thream/styled-jsx-plugin-sass.git"
   },
   "bugs": {
     "url": "https://github.com/Thream/styled-jsx-plugin-sass/issues"
@@ -32,7 +32,7 @@
   "scripts": {
     "lint:commit": "commitlint",
     "lint:editorconfig": "editorconfig-checker",
-    "lint:markdown": "markdownlint '**/*.md' --dot --ignore node_modules",
+    "lint:markdown": "markdownlint \"**/*.{md,mdx}\" --dot --ignore-path \".gitignore\"",
     "lint:javascript": "standard",
     "release": "semantic-release",
     "test": "mocha test.js",
