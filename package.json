@@ -1,11 +1,15 @@
 {
   "name": "@styled-jsx/plugin-sass",
   "version": "0.0.0-development",
-  "description": "Plugin to add Sass support to styled-jsx",
+  "description": "Plugin to add Sass support to styled-jsx.",
   "license": "MIT",
   "main": "index.js",
   "engines": {
     "node": ">=12.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "keywords": [
     "styled-jsx-plugin",
@@ -29,10 +33,13 @@
       "mocha"
     ]
   },
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "lint:commit": "commitlint",
     "lint:editorconfig": "editorconfig-checker",
-    "lint:markdown": "markdownlint \"**/*.{md,mdx}\" --dot --ignore-path \".gitignore\"",
+    "lint:markdown": "markdownlint-cli2",
     "lint:javascript": "standard",
     "release": "semantic-release",
     "test": "mocha test.js",
@@ -44,16 +51,18 @@
     "strip-indent": "3.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "16.2.4",
-    "@commitlint/config-conventional": "16.2.4",
-    "editorconfig-checker": "4.0.2",
-    "husky": "8.0.1",
-    "markdownlint-cli": "0.31.1",
-    "mocha": "10.0.0",
+    "@types/node": "20.3.3",
+    "@commitlint/cli": "17.6.6",
+    "@commitlint/config-conventional": "17.6.6",
+    "editorconfig-checker": "5.1.1",
+    "husky": "8.0.3",
+    "markdownlint-cli2": "0.8.1",
+    "markdownlint-rule-relative-links": "2.1.0",
+    "mocha": "10.2.0",
     "pinst": "3.0.0",
-    "sass": "1.51.0",
-    "semantic-release": "19.0.2",
-    "standard": "17.0.0"
+    "sass": "1.63.6",
+    "semantic-release": "21.0.6",
+    "standard": "17.1.0"
   },
   "peerDependencies": {
     "sass": "*"

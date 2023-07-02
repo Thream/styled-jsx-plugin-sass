@@ -7,14 +7,22 @@ on:
 jobs:
   release:
     runs-on: 'ubuntu-latest'
+    permissions:
+      contents: 'write'
+      issues: 'write'
+      pull-requests: 'write'
+      id-token: 'write'
     steps:
-      - uses: 'actions/checkout@v2'
+      - uses: 'actions/checkout@v3'
 
       - name: 'Use Node.js'
-        uses: 'actions/setup-node@v2.5.1'
+        uses: 'actions/setup-node@v3'
         with:
           node-version: 'lts/*'
           cache: 'npm'
+
+      - name: 'Verify the integrity of provenance attestations and registry signatures for installed dependencies'
+        run: 'npm audit signatures'
 
       - name: 'Install'
         run: 'npm install'
