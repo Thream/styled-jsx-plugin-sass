@@ -27,9 +27,7 @@ module.exports = (css, settings) => {
   const data = stripIndent(optionData) + '\n' + stripIndent(cssWithPlaceholders)
   const file = settings.babel && settings.babel.filename
 
-  const preprocessed = sass
-    .renderSync(Object.assign({}, { file }, settings.sassOptions, { data }))
-    .css.toString()
+  const preprocessed = sass.compileString(data, settings.sassOptions).css.toString();
 
   return preprocessed
     .replace(
